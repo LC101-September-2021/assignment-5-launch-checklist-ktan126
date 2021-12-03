@@ -3,7 +3,7 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     const div = document.getElementById("missionTarget");
-    div.innerHTML = `\
+    div.innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
                     <li>Name: ${name}</li>
@@ -12,7 +12,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Distance from Earth: ${distance}</li>
                     <li>Number of Moons: ${moons}</li>
                 </ol>
-                <img src="${imageurl}"></img>
+                <img src="${imageUrl}"></img>
         `;
 }
 
@@ -81,17 +81,21 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
           "Fuel level high enough for launch";
         document.getElementById("fuelStatus").style.color = "black";
       }
+
+
 }
 
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
-    
-    planetsReturned = await planetsReturned.json();
-
+    planetsReturned = await fetch(
+        "https://handlers.education.launchcode.org/static/planets.json"
+      );
+      planetsReturned = await planetsReturned.json();
+      
     return planetsReturned;
-}
+    }
+    
 
 function pickPlanet(planets) {
     return Math.floor(Math.random() * planets.length);
