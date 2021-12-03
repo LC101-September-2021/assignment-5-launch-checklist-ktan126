@@ -64,7 +64,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
       }
       if (cargoHigh) {
         document.getElementById("cargoStatus").style.visibility = "visible";
-        document.getElementById("fuelStatus").style.visibility = "visibile";
+        document.getElementById("fuelStatus").style.visibility = "visible";
         document.getElementById("cargoStatus").innerHTML =
           "Too much mass for take off!";
         document.getElementById("cargoStatus").style.color = "red";
@@ -86,8 +86,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
-        });
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
+    
+    planetsReturned = await planetsReturned.json();
 
     return planetsReturned;
 }
