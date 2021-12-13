@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-  const form = this.document.querySelector("form");
+  const form = document.querySelector("form");
 
  let listedPlanets;
  // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -23,12 +23,6 @@ window.addEventListener("load", function() {
      const planetMoons = selectedPlanet.moons;
      const planetImg = selectedPlanet.image;
 
-  //    console.log(planetName);
-  //    console.log(planetDiameter);
-  //    console.log(planetStar);
-  //    console.log(planetDist);
-  //    console.log(planetMoons);
-  //    console.log(planetImg);
 
      addDestinationInfo(this.document, planetName, planetDiameter, planetStar, planetDist, planetMoons, planetImg);
 
@@ -37,13 +31,15 @@ window.addEventListener("load", function() {
  form.addEventListener("submit", event => {
       event.preventDefault();
       
-      const pilot = this.document.getElementById("pilotName").value;
-      const copilot = this.document.getElementById("copilotName").value;
-      const fuelLevel = this.document.getElementById("fuelLevel").value;
-      const cargoMass = this.document.getElementById("cargoMass").value;
-      const faultyItems = this.document.getElementById("faultyItems");
+      const pilot = document.getElementById("pilotName").value;
+      // const copilot = document.getElementById("copilotName").value;
+      const copilot = document.querySelector("input[name=copilotName]").value;
+      const fuelLevel = document.getElementById("fuelLevel").value;
+      const cargoMass = document.getElementById("cargoMass").value;
+      const faultyItems = document.getElementById("faultyItems");
+
       
-       formSubmission(this.document, faultyItems, pilot, copilot, fuelLevel, cargoMass);
+       formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoMass);
        
   });
  
