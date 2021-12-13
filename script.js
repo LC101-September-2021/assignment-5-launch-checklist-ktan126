@@ -1,17 +1,20 @@
 // Write your JavaScript code here!
 document = window.document;
-let list = "";
-let pilot = document.querySelector("input[name=pilotName]");
-let copilot = document.querySelector("input[name=copilotName]");
-let fuelLevel = document.querySelector("input[name=fuelLevel]");
-let cargoLevel = document.querySelector("input[name=cargoMass]");
+  let list = "";
+  //this does not prompt anything
+
 
 window.addEventListener("load", function () {
   let form = document.querySelector("form");
   form.addEventListener("submit", function (event) {
-    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
-    alert("all field required");
-    event.preventDefault();
+    let pilot = document.querySelector("input[name=pilotName]");
+    let copilot = document.querySelector("input[name=copilotName]");
+    let fuelLevel = document.querySelector("input[name=fuelLevel]");
+    let cargoLevel = document.querySelector("input[name=cargoMass]");
+    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel); {
+    // alert("All fields required");
+    // event.preventDefault();
+    }
   });
 
   let listedPlanets;
