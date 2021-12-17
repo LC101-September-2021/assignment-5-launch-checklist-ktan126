@@ -29,17 +29,16 @@ window.addEventListener("load", function() {
  });
 
  form.addEventListener("submit", event => {
-      event.preventDefault();
       
       const pilot = document.getElementById("pilotName").value;
       // const copilot = document.getElementById("copilotName").value;
       const copilot = document.querySelector("input[name=copilotName]").value;
-      const fuelLevel = document.getElementById("fuelLevel").value;
-      const cargoMass = document.getElementById("cargoMass").value;
+      const fuelLevel = document.querySelector("input[name=fuelLevel]").value;
+      const cargoMass = document.querySelector("input[name=cargoMass]").value;
       const faultyItems = document.getElementById("faultyItems");
 
       
-       formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoMass);
+       formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoMass, event);
        
   });
  
